@@ -1,0 +1,18 @@
+import sys
+def prime(n):
+    if n < 2:
+        return False
+    for i in range (2, n):
+        if n%i==0:
+            return False
+    return True
+
+db, eredmeny, primek = 0, 1, []
+
+while db < 10001:
+    eredmeny += 1
+    if prime(eredmeny):
+        db += 1
+        primek.append(eredmeny)
+
+print(primek[-1])
