@@ -1,39 +1,3 @@
-def EX6(str):
-    KARAKTEREK = ['A','B','C','D','E','F',
-        'G','H','I','J','K','L','M',
-        'N','O','P','Q','R','S','T',
-        'U','V','W','X','Y','Z',
-        '0','1','2','3','4','5',
-        '6',  '7',  '8','9']
-    MORSE = ['.-','-...','-.-.','-..','.','..-.',
-        '--.','....','..','.---','-.-','.-..','--','-.',
-        '---','.--.','--.-','.-.','...','-','..-',
-        '...-','.--','-..-','-.--','--..',
-        '-----','.----','..---','...--','....-','.....',
-        '-....','--...','---..','----.']
-
-
-
-    L = ''
-    if str[0] == '.' or str[0] == '-':
-        str = str.split(' ')
-        for i in str:
-            for j in range(0, len(MORSE)):
-                if i == MORSE[j]:
-                    L += KARAKTEREK[j].lower()
-                    L += ' '
-        return L
-    else:
-        for i in str:
-            i = i.upper()
-            for j in range(0, len(KARAKTEREK)):
-                if i == KARAKTEREK[j]:
-                    L += MORSE[j]
-                    L += ' '
-        return L
-
-
-
 def EX6_withDictionary(str):
     dict = {'A': '.-',     'B': '-...',   'C': '-.-.',
         'D': '-..',    'E': '.',      'F': '..-.',
@@ -65,5 +29,4 @@ def EX6_withDictionary(str):
                     t += ' '
     return t
 
-k = '.... . .-.. .-.. --- .-- --- .-. .-.. -.. .. -. .- ..-. .-. .- -- .'
-print(EX6_withDictionary(k))
+print(EX6_withDictionary(input('Leforditando szoveg: ')))
